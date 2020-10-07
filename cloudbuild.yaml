@@ -3,6 +3,7 @@ steps:
 - id: "Execultando Testes"
   name: "gcr.io/cloud-builders/go"
   args: ["test"]
+  env: ['GOPATH=/go/src']
 
 - id: "Push da imagem Docker"
   name: "gcr.io/cloud-builders/docker"
