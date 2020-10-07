@@ -1,0 +1,12 @@
+steps:
+
+- id: "Execultando Testes"
+  name: "gcr.io/cloud-builders/go"
+  args: ["test"]
+
+- id: "Push da imagem Docker"
+  name: "gcr.io/cloud-builders/docker"
+  args: ['build','-t','gcr.io/$PROJECT_ID/soma_go','.']
+  
+images:
+- 'gcr.io/$PROJECT_ID/soma_go'  
